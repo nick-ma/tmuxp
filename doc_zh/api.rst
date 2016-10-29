@@ -1,32 +1,32 @@
 .. _api:
 
 =============
-API Reference
+API 参考
 =============
 
 .. seealso::
-    See :ref:`libtmux's API <libtmux:api>` and :ref:`Quickstart
-    <libtmux:quickstart>` to see how you can control tmux via python API calls.
+    通过python调用API来控制tmux，请参考 :ref:`libtmux's API <libtmux:api>` and :ref:`Quickstart
+    <libtmux:quickstart>` 。
 
 .. module:: tmuxp
 
-Internals
+内部
 ---------
 
 .. automethod:: tmuxp.util.run_before_script
 
 
-Configuration
+配置
 -------------
 
-Finding
+查找
 """""""
 
 .. automethod:: tmuxp.config.is_config_file
 .. automethod:: tmuxp.config.in_dir
 .. automethod:: tmuxp.config.in_cwd
 
-Import and export
+导入与导出
 """""""""""""""""
 
 .. automethod:: tmuxp.config.validate_schema
@@ -43,13 +43,13 @@ Import and export
 
 .. automethod:: tmuxp.config.import_tmuxinator
 
-Workspace Builder
+工作区构建器
 -----------------
 
 .. autoclass:: tmuxp.WorkspaceBuilder
    :members:
 
-Exceptions
+异常
 ----------
 
 .. autoexception:: tmuxp.exc.EmptyConfigException
