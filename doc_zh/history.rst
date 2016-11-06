@@ -1,7 +1,7 @@
 .. _history:
 
 =======
-History
+更新历史
 =======
 
 .. module:: tmuxp

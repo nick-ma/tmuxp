@@ -1,7 +1,7 @@
 .. _glossary:
 
 ========
-Glossary
+术语
 ========
 
 
@@ -47,18 +47,18 @@ Glossary
         Uniquely identified by ``session_id``.
 
     Window
-        Entity of a :term:`session`.
+        一个 :term:`session` 的实体.
 
-        Can have 1 or more :term:`pane`.
+        可以包含1个或多个 :term:`pane`.
 
-        Panes can be organized with a layouts.
+        面板可以通过布局来进行排布。
 
-        Windows can have names.
+        窗口可以起个名字。
 
     Pane
-        Linked to a :term:`Window`.
+        属于一个 :term:`Window`。
 
-        a pseudoterminal.
+        一个伪终端。
 
     Target
         A target, cited in the manual as ``[-t target]`` can be a session,

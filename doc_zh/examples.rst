@@ -1,7 +1,7 @@
 .. _examples:
 
 ========
-Examples
+例子
 ========
 
 Short hand / inline

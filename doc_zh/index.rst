@@ -4,7 +4,7 @@
 tmuxp
 #####
 ====================
-tmux session manager
+tmux 回话管理器
 ====================
 
 .. image:: _static/tmuxp-demo.gif
@@ -14,7 +14,7 @@ tmux session manager
     :start-line: 8
     :end-before: Project details
 
-Explore:
+探索:
 
 .. toctree::
     :maxdepth: 2

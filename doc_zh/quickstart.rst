@@ -1,43 +1,42 @@
 .. _quickstart:
 
 ==========
-Quickstart
+快速启动
 ==========
 
-Installation
+安装
 ------------
 
-Assure you have at least tmux **>= 1.8** and python **>= 2.6**. For Ubuntu 12.04/12.10/13.04 users, you can download the tmux 1.8 package for Ubuntu 13.10 from `https://launchpad.net/ubuntu/+source/tmux <https://launchpad.net/ubuntu/+source/tmux>`_ and install it using dpkg.
+确保你已经安装了最新版的tmux **>= 1.8** 和python **>= 2.6**。 对于Ubuntu 12.04/12.10/13.04 的用户来说，你可以从 `https://launchpad.net/ubuntu/+source/tmux <https://launchpad.net/ubuntu/+source/tmux>`_ 下载tmux 1.8，然后用dpkg来安装。
 
 .. code-block:: bash
 
     $ pip install tmuxp
 
-You can upgrade to the latest release with:
+用如下命令将tmux升级到最新版:
 
 .. code-block:: bash
 
     $ pip install tmuxp -U
 
-Then install :ref:`bash_completion`.
+然后安装 :ref:`bash_completion`.
 
-CLI
----
+命令行
+-----
 
 .. seealso:: :ref:`examples`, :ref:`cli`, :ref:`bash_completion`.
 
-tmuxp launches workspaces / sessions from JSON and YAML files.
+tmuxp通过加载JSON或YAML格式的配置文件来启动工作区／会话。
 
-Configuration files can be stored in ``$HOME/.tmuxp`` or in project
-directories as ``.tmuxp.py``, ``.tmuxp.json`` or ``.tmuxp.yaml``.
+配置文件可以放在 ``$HOME/.tmuxp`` 或者放在项目目录下面，并以 ``.tmuxp.py``, ``.tmuxp.json`` 或 ``.tmuxp.yaml``来命名。
 
-Every configuration is required to have:
+配置文件必需包含如下内容:
 
 1. ``session_name``
-2. list of ``windows``
-3. list of ``panes`` for every window in ``windows``
+2. ``windows`` 列表
+3. 每个 ``windows`` 里面的 ``panes`` 列表。
 
-Create a file, ``~/.tmuxp/example.yaml``:
+新建一个文件, ``~/.tmuxp/example.yaml``:
 
 .. literalinclude:: ../examples/2-pane-vertical.yaml
     :language: yaml
@@ -46,18 +45,17 @@ Create a file, ``~/.tmuxp/example.yaml``:
 
     $ tmuxp load example.yaml
 
-This creates your tmuxp session.
+以上命令创建了一个新的会话。
 
-Load multiple tmux sessions at once:
+一次性加载多个会话:
 
 .. code-block:: bash
 
     $ tmuxp load example.yaml anothersession.yaml
 
-tmuxp will offer to ``switch-client`` for you if you're already in a
-session.
+如果当前已经在一个会话中，tmuxp会提供一个 ``switch-client`` 选项供你切换到新加载进来的这个会话。
 
-You can also `Import`_ configs `teamocil`_ and `tmuxinator`_.
+你还可以 `Import`_ 配置信息 `teamocil`_ 和 `tmuxinator`_.
 
 .. _Import: http://tmuxp.readthedocs.io/en/latest/cli.html#import
 .. _tmuxinator: https://github.com/aziz/tmuxinator
@@ -80,7 +78,7 @@ AL - `Abstraction Layer`_
 .. _Abstraction Layer: http://en.wikipedia.org/wiki/Abstraction_layer
 .. _Object Relational Mapper: http://en.wikipedia.org/wiki/Object-relational_mapping
 
-python abstraction layer
+python 抽象层
 """"""""""""""""""""""""
 
 ======================================== =================================
