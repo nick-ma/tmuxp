@@ -3,66 +3,62 @@
 .. _developing:
 
 ======================
-Developing and Testing
+开发和测试
 ======================
 
 .. todo::
     link to sliderepl or ipython notebook slides
 
-Our tests are inside ``tests/``. Tests are implemented using
-`pytest`_.
+所有的测试文件都放在 ``tests/``。 测试用例用 `pytest`_ 实现的。
 
-``make test`` will create a tmux server on a separate ``socket_name``
-using ``$ tmux -L test_case``.
+``make test`` 将使用``$ tmux -L test_case``命令用``socket_name``启动过一个新的tmux的会话。
 
 .. _pytest: http://pytest.org/
 
 .. _install_dev_env:
 
-Install the latest code from git
+从git安装最新版的代码
 --------------------------------
 
-To begin developing, check out the code from github:
+在开始开发之前，需要从github上检出代码：
 
 .. code-block:: bash
 
     $ git clone git@github.com:tony/tmuxp.git
     $ cd tmuxp
 
-Now create a virtualenv, if you don't know how to, you can create a
-virtualenv with:
+接下来创建一个virtualenv。 如果你还不知道这是啥东西的话，就按照下面的命令打就可以了：
 
 .. code-block:: bash
 
     $ virtualenv .venv
 
-Then activate it to your current tty / terminal session with:
+然后，在你当前的终端会话上激活它：
 
 .. code-block:: bash
 
     $ source .venv/bin/activate
 
-Good! Now let's run this:
+干得漂亮！接下来执行下面这些命令：
 
 .. code-block:: bash
 
     $ pip install -e .
 
-This has ``pip``, a python package manager install the python package
-in the current directory. ``-e`` means ``--editable``, which means you can
-adjust the code and the installed software will reflect the changes.
+你的事先安装过pip，这个是python的软件包管理器。
+这个命令的意思是在当前目录下安装python的软件包。
+``-e`` 这个参数是 ``--editable``，意思是你可以编辑安装的软件包，并且已经安装的软件能反映出这个更改。
 
 .. code-block:: bash
 
     $ tmuxp
 
-Test Runner
+测试执行器
 -----------
 
-As you seen above, the ``tmuxp`` command will now be available to you,
-since you are in the virtual environment, your `PATH` environment was
-updated to include a special version of ``python`` inside your ``.venv``
-folder with its own packages.
+如上所见，由于你已经在虚拟环境中，你可以使用``tmuxp``命令了。
+你的``PATH``环境变量已经更新为对应到你的``.venv``目录下指定的python版本，并且有自己独立的软件包。
+
 
 .. code-block:: bash
 
@@ -75,24 +71,24 @@ If you found a problem or are trying to write a test, you can file an
 
 .. _test_specific_tests:
 
-Test runner options
+测试执行器的参数
 ~~~~~~~~~~~~~~~~~~~
 
-Test only a file:
+只测试一个文件:
 
 .. code-block:: bash
 
     $ py.test tests/test_config.py
 
-will test the ``tests/test_config.py`` tests.
+将只执行 ``tests/test_config.py`` .
 
 .. code-block:: bash
 
     $ py.test tests/test_config.py::test_export_json
 
-tests ``test_export_json`` inside of ``tests/test_config.py``.
+将测试``test_config.py``里的``test_export_json``方法。
 
-Multiple can be separated by spaces:
+用空格来隔开多个文件：
 
 .. code-block:: bash
 
@@ -100,38 +96,34 @@ Multiple can be separated by spaces:
 
 .. _test_builder_visually:
 
-Visual testing
+可视化测试
 ~~~~~~~~~~~~~~
 
-You can watch tmux testsuite build sessions visually by keeping a client
-open in a separate terminal.
+你可以通过在一个单独的终端中挂载测试的那个会话来可视化的观察测试用例跑测试的过程。
 
-Create two terminals:
+创建2个终端:
 
-  - Terminal 1: ``$ tmux -L test_case``
-  - Terminal 2: ``$ cd`` into the tmuxp project and into the
-    ``virtualenv`` if you are using one, see details on installing the dev
-    version of tmuxp above. Then:
+  - 终端 1: ``$ tmux -L test_case``
+  - 终端 2: ``$ cd`` 到tmuxp的项目目录，并且进入到你正使用的 ``virtualenv`` 。 
+    然后:
 
     .. code-block:: bash
     
         $ py.test tests/test_workspacebuilder.py
 
-Terminal 1 should have flickered and built the session before your eyes.
-tmuxp hides this building from normal users.
+终端 1 应该动起来了，并且在你的眼前开始创建会话。正常情况下，tmupx对用户隐藏了这个细节。
 
-Run tests on save
+保存时执行测试
 -----------------
 
-You can re-run tests automatically on file edit.
+你可以在编辑文件的时候同时触发测试。
 
 .. note::
-    This requires ``entr(1)``.
+    需要安装 ``entr(1)``.
 
-Install `entr`_.  Packages are available available on most Linux and BSD
-variants, including Debian, Ubuntu, FreeBSD, OS X.
+安装 `entr`_.  这个包在绝大部分的Linux系统中都有。包括：Debian, Ubuntu, FreeBSD, OS X。
 
-To run all tests upon editing any ``.py`` file:
+当编辑任何py文件的时候需要跑测试用例的做法：
 
 .. code-block:: bash
 
@@ -146,10 +138,10 @@ argument`_:
 
    $ make watch_test test='-x tests/test_config.py tests/test_util.py'
 
-Rebuild sphinx docs on save
+保存时重新生成sphinx文档
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Rebuild the documentation when an ``.rst`` file is edited:
+当``.rst``文件被编辑后，自动触发构建文档： 
 
 .. code-block:: bash
 

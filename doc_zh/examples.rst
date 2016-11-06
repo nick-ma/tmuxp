@@ -1,7 +1,7 @@
 .. _examples:
 
 ========
-例子
+示 例
 ========
 
 Short hand / inline
@@ -145,10 +145,10 @@ JSON
 .. literalinclude:: ../examples/4-pane.json
     :language: json
 
-Start Directory
+起始路径
 ---------------
 
-Equivalent to ``tmux new-window -c <start-directory>``.
+相当于 ``tmux new-window -c <start-directory>``.
 
 YAML
 ~~~~
@@ -162,9 +162,9 @@ JSON
 .. literalinclude:: ../examples/start-directory.json
     :language: json
 
-Environment variable replacing
+替换环境变量
 ------------------------------
-
+tmux可以用括号括起来的替换
 tmuxp will replace environment variables wrapped in curly brackets
 for values of these settings:
 
@@ -407,16 +407,18 @@ Edit this page.
 You can use ``start_directory: ./`` to make the directories relative to
 the config file / project root.
 
-Kung fu
+武 功
 -------
 
 .. note::
 
-    tmuxp sessions can be scripted in python. The first way is to use the
-    ORM in the :ref:`API`. The second is to pass a :py:obj:`dict` into
-    :class:`tmuxp.WorkspaceBuilder` with a correct schema. See:
-    :meth:`tmuxp.config.validate_schema`.
+    tmux的会话可以用Python语言来编程管理。
+    第一种方法是通过 :ref:`API` 提供的ORM。
+    第二种方法是向 :class:`tmuxp.WorkspaceBuilder` 传递正确的 :py:obj:`dict` 
+    数据结构。 
+    详情请查看： :meth:`tmuxp.config.validate_schema` 。
+   
 
-Add yours? Submit a pull request to the `github`_ site!
+想加入你的招式？ 向 `github`_ 猛烈的扔PR吧！
 
 .. _github: https://github.com/tony/tmuxp
